@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PopularMoviesVC.swift
 //  MoviesDB
 //
 //  Created by BumLak Kim on 2/13/20.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PopularMoviesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        API.fetchPopularMovies { results in
+            print(results.page)
+        }
     }
-
-
 }
 
