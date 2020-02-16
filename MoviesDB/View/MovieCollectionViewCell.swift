@@ -14,7 +14,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     var movie: Movie? {
         didSet{
             if let movie = movie {
-                movieImage.kf.setImage(with: movie.posterPath.url)
+                movieImage.kf.setImage(with: "\(movie.posterPath ?? "")".url)
             }
         }
     }

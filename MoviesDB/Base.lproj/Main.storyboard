@@ -55,6 +55,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Zgw-zW-HOd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="g7y-Fu-j6f"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -101,6 +102,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ujS-xh-bwb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Iz-2u-I8b">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

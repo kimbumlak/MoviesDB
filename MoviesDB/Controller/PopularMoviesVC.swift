@@ -12,6 +12,8 @@ private let identifier = "MovieCell"
 class PopularMoviesVC: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     private var movies: [Movie]?
+    private var page: Int = 1
+    private var totalPages: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +22,27 @@ class PopularMoviesVC: UIViewController {
         layout.itemSize = CGSize(width: width, height: 200)
         fetch()
     }
-    private func fetch() {
-        API.fetchPopularMovies { data in
+    private func fetch(_ page: Int = 1) {
+        API.fetchPopularMovies(page) { data in
+            self.totalPages = data.totalPages
             self.movies = data.results
             self.collectionView.reloadData()
         }
     }
+    private func loadMoreData() {
+        if page < totalPages {
+            page += 1
+            OperationQueue.main.addOperation {
+                API.fetchPopularMovies(self.page) { data in
+                    self.movies? += data.results
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
 }
 
-extension PopularMoviesVC: UICollectionViewDataSource {
+extension PopularMoviesVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies?.count ?? 0
     }
@@ -36,5 +50,11 @@ extension PopularMoviesVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! MovieCollectionViewCell
         cell.movie = movies?[indexPath.item]
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){
+        guard let count = movies?.count else {fatalError()}
+        if indexPath.item == count - 1 {
+            self.loadMoreData()
+        }
     }
 }
