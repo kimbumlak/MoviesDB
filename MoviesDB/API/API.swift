@@ -15,9 +15,9 @@ private let apiKey = "a9f4f2deb8fd08f2b70a197b03f5fa21"
 private let coder = JSONDecoder()
 
 class API {
-    class func fetchPopularMovies(_ page: Int, onSuccess: @escaping (Results) -> Void) {
+    class func fetchMovies(_ movies: String, page: Int, onSuccess: @escaping (Results) -> Void) {
         coder.keyDecodingStrategy = .convertFromSnakeCase
-        let urlStr = "\(baseUrl)popular?api_key=\(apiKey)&page=\(page)"
+        let urlStr = "\(baseUrl)\(movies)?api_key=\(apiKey)&page=\(page)"
         guard let url = URL(string: urlStr) else {fatalError("Unable to get url")}
         
         AF.request(url).response { response in

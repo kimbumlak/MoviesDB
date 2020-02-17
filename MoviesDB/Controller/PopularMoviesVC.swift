@@ -20,10 +20,11 @@ class PopularMoviesVC: UIViewController {
         let width = (view.frame.size.width - 20) / 3
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: 200)
+        self.title = "Popular Movies"
         fetch()
     }
     private func fetch(_ page: Int = 1) {
-        API.fetchPopularMovies(page) { data in
+        API.fetchMovies("popular", page: page) { data in
             self.totalPages = data.totalPages
             self.movies = data.results
             self.collectionView.reloadData()
@@ -33,7 +34,7 @@ class PopularMoviesVC: UIViewController {
         if page < totalPages {
             page += 1
             OperationQueue.main.addOperation {
-                API.fetchPopularMovies(self.page) { data in
+                API.fetchMovies("popular", page: self.page) { data in
                     self.movies? += data.results
                     self.collectionView.reloadData()
                 }
