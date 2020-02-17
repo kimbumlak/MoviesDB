@@ -15,6 +15,7 @@
 		EC21CB4D23F60FA300B52CFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC21CB4B23F60FA300B52CFC /* Main.storyboard */; };
 		EC21CB4F23F60FA400B52CFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC21CB4E23F60FA400B52CFC /* Assets.xcassets */; };
 		EC21CB5223F60FA400B52CFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC21CB5023F60FA400B52CFC /* LaunchScreen.storyboard */; };
+		EC39EBA523FA27CB000E2F79 /* TopRatedVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC39EBA423FA27CB000E2F79 /* TopRatedVCViewController.swift */; };
 		EC49109723F6180600DAB164 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC49109623F6180600DAB164 /* Results.swift */; };
 		EC49109923F618A200DAB164 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC49109823F618A200DAB164 /* Movie.swift */; };
 		EC49109C23F6196200DAB164 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC49109B23F6196200DAB164 /* API.swift */; };
@@ -33,6 +34,7 @@
 		EC21CB4E23F60FA400B52CFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC21CB5123F60FA400B52CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC21CB5323F60FA400B52CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC39EBA423FA27CB000E2F79 /* TopRatedVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedVCViewController.swift; sourceTree = "<group>"; };
 		EC49109623F6180600DAB164 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		EC49109823F618A200DAB164 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EC49109B23F6196200DAB164 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				EC21CB4923F60FA300B52CFC /* PopularMoviesVC.swift */,
+				EC39EBA423FA27CB000E2F79 /* TopRatedVCViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				EC21CB4623F60FA300B52CFC /* AppDelegate.swift in Sources */,
 				EC49109723F6180600DAB164 /* Results.swift in Sources */,
 				EC21CB4823F60FA300B52CFC /* SceneDelegate.swift in Sources */,
+				EC39EBA523FA27CB000E2F79 /* TopRatedVCViewController.swift in Sources */,
 				EC1EEB0623F78C7800A0C9FC /* MovieCollectionViewCell.swift in Sources */,
 				EC49109C23F6196200DAB164 /* API.swift in Sources */,
 				EC49109923F618A200DAB164 /* Movie.swift in Sources */,
